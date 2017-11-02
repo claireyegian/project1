@@ -4,6 +4,10 @@
 
 from ggame import *
 
+def mouseClick(event):
+    if (click.x>20 and click.x<70) and (click.y>185 and click.y<235):
+        print(1)
+
 orange = Color(0xfa9806,1)
 lightGrey = Color(0xcecece,1)
 darkGrey = Color(0x6f6f6f,1)
@@ -71,4 +75,6 @@ Sprite(functionButton,(260,330))
 Sprite(buttonText5,(255,320))
 Sprite(functionButton,(260,390))
 Sprite(buttonText6,(255,380))
+
+App().listenMouseEvent('click',mouseClick)
 App().run()
