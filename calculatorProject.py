@@ -5,8 +5,26 @@
 from ggame import *
 
 def mouseClick(event):
-    if (click.x>20 and click.x<70) and (click.y>185 and click.y<235):
+    if (event.x>20 and event.x<70) and (event.y>185 and event.y<235):
         print(1)
+    if (event.x>95 and event.x<145) and (event.y>185 and event.y<235):
+        print(2)
+    if (event.x>170 and event.x<220) and (event.y>185 and event.y<235):
+        print(3)
+    if (event.x>20 and event.x<70) and (event.y>245 and event.y<295):
+        print(4)
+    if (event.x>95 and event.x<145) and (event.y>245 and event.y<295):
+        print(5)
+    if (event.x>170 and event.x<220) and (event.y>245 and event.y<295):
+        print(6)
+    if (event.x>20 and event.x<70) and (event.y>305 and event.y<355):
+        print(7)
+    if (event.x>95 and event.x<145) and (event.y>305 and event.y<355):
+        print(8)
+    if (event.x>170 and event.x<220) and (event.y>305 and event.y<355):
+        print(9)
+    if (event.x>20 and event.x<70) and (event.y>365 and event.y<415):
+        print(0)
 
 if __name__ == '__main__':
     orange = Color(0xfa9806,1)
