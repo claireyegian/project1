@@ -42,8 +42,8 @@ def mouseClick(event):  #which button did the user click
 def processNumber(type,value):
     valueText = ''
     if type=='num':
-        valueText += str(value)
-    print(valueText)
+        valueText = valueText+str(value)
+        print(valueText)
     
 
 if __name__ == '__main__':
