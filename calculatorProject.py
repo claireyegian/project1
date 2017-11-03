@@ -6,48 +6,62 @@ from ggame import *
 
 def mouseClick(event):  #which button did the user click
     if (event.x>20 and event.x<70) and (event.y>185 and event.y<235):
-        processNumber('num',1)
+        processNumber(1)
     if (event.x>95 and event.x<145) and (event.y>185 and event.y<235):
-        processNumber('num',2)
+        processNumber(2)
     if (event.x>170 and event.x<220) and (event.y>185 and event.y<235):
-        processNumber('num',3)
+        processNumber(3)
     if (event.x>20 and event.x<70) and (event.y>245 and event.y<295):
-        processNumber('num',4)
+        processNumber(4)
     if (event.x>95 and event.x<145) and (event.y>245 and event.y<295):
-        processNumber('num',5)
+        processNumber(5)
     if (event.x>170 and event.x<220) and (event.y>245 and event.y<295):
-        processNumber('num',6)
+        processNumber(6)
     if (event.x>20 and event.x<70) and (event.y>305 and event.y<355):
-        processNumber('num',7)
+        processNumber(7)
     if (event.x>95 and event.x<145) and (event.y>305 and event.y<355):
-        processNumber('num',8)
+        processNumber(8)
     if (event.x>170 and event.x<220) and (event.y>305 and event.y<355):
-        processNumber('num',9)
+        processNumber(9)
     if (event.x>20 and event.x<70) and (event.y>365 and event.y<415):
-        processNumber('num',0)
+        processNumber(0)
         
     if (event.x>20 and event.x<70) and (event.y>125 and event.y<175):
-        processNumber('clear','AC')
+        operation('AC')
     if (event.x>235 and event.x<285) and (event.y>125 and event.y<175):
-        processNumber('fun','÷')
+        operation('÷')
     if (event.x>235 and event.x<285) and (event.y>185 and event.y<235):
-        processNumber('fun','x')
+        operation('x')
     if (event.x>235 and event.x<285) and (event.y>245 and event.y<295):
-        processNumber('fun','-')
+        operation('-')
     if (event.x>235 and event.x<285) and (event.y>305 and event.y<355):
-        processNumber('fun','+')
+        operation('+')
     if (event.x>235 and event.x<285) and (event.y>365 and event.y<415):
-        processNumber('equals','=')
+        compute()
 
-def processNumber(type,value):
-    valueText = ''
-    if type=='num':
-        valueText = valueText+str(value)
-        print(valueText)
+def processNumber(value):
+    data['valueText1'] = data['valueText1']+str(value)
+    data['num1'] = data['valueText1']
+
+def operation(value):
+    data['command'] = value
+
+def processNumber(value):
+    data['valueText2'] = data['valueText2']+str(value)
+    data['num2'] = data['valueText2']
+
+def compute():
+    
     
 
 if __name__ == '__main__':
     
+    data = {}
+    data['valueText1'] = ''
+    data['valueText2'] = ''
+    data['num1']
+    data['command']
+    data['num2']
     
     orange = Color(0xfa9806,1)  #calculator colors
     lightGrey = Color(0xcecece,1)
