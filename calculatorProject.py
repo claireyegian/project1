@@ -6,42 +6,44 @@ from ggame import *
 
 def mouseClick(event):  #which button did the user click
     if (event.x>20 and event.x<70) and (event.y>185 and event.y<235):
-        return(1)
+        processNumber('num',1)
     if (event.x>95 and event.x<145) and (event.y>185 and event.y<235):
-        return(2)
+        processNumber('num',2)
     if (event.x>170 and event.x<220) and (event.y>185 and event.y<235):
-        return(3)
+        processNumber('num',3)
     if (event.x>20 and event.x<70) and (event.y>245 and event.y<295):
-        return(4)
+        processNumber('num',4)
     if (event.x>95 and event.x<145) and (event.y>245 and event.y<295):
-        return(5)
+        processNumber('num',5)
     if (event.x>170 and event.x<220) and (event.y>245 and event.y<295):
-        return(6)
+        processNumber('num',6)
     if (event.x>20 and event.x<70) and (event.y>305 and event.y<355):
-        return(7)
+        processNumber('num',7)
     if (event.x>95 and event.x<145) and (event.y>305 and event.y<355):
-        return(8)
+        processNumber('num',8)
     if (event.x>170 and event.x<220) and (event.y>305 and event.y<355):
-        return(9)
+        processNumber('num',9)
     if (event.x>20 and event.x<70) and (event.y>365 and event.y<415):
-        return(0)
+        processNumber('num',0)
         
     if (event.x>20 and event.x<70) and (event.y>125 and event.y<175):
-        return('AC')
+        processNumber('clear','AC')
     if (event.x>235 and event.x<285) and (event.y>125 and event.y<175):
-        return('÷')
+        processNumber('fun','÷')
     if (event.x>235 and event.x<285) and (event.y>185 and event.y<235):
-        return('x')
+        processNumber('fun','x')
     if (event.x>235 and event.x<285) and (event.y>245 and event.y<295):
-        return('-')
+        processNumber('fun','-')
     if (event.x>235 and event.x<285) and (event.y>305 and event.y<355):
-        return('+')
+        processNumber('fun','+')
     if (event.x>235 and event.x<285) and (event.y>365 and event.y<415):
-        return('=')
+        processNumber('equals','=')
 
-def processNumber():
-    if mouseClick()==1:
-        print('yay')
+def processNumber(type,value):
+    valueText = ''
+    if type=='num':
+        valueText += str(value)
+    print(valueText)
     
 
 if __name__ == '__main__':
