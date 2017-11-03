@@ -50,10 +50,6 @@ def processNumber(value):
     data['valueText2'] = data['valueText2']+str(value)
     data['num2'] = data['valueText2']
 
-def compute():
-    
-    
-
 if __name__ == '__main__':
     
     data = {}
