@@ -4,7 +4,7 @@
 
 from ggame import *
 
-def mouseClick(event):
+def mouseClick(event):  #which button did the user click
     if (event.x>20 and event.x<70) and (event.y>185 and event.y<235):
         print(1)
     if (event.x>95 and event.x<145) and (event.y>185 and event.y<235):
@@ -25,14 +25,29 @@ def mouseClick(event):
         print(9)
     if (event.x>20 and event.x<70) and (event.y>365 and event.y<415):
         print(0)
+        
+    if (event.x>20 and event.x<70) and (event.y>125 and event.y<175):
+        print('AC')
+    if (event.x>235 and event.x<285) and (event.y>125 and event.y<175):
+        print('÷')
+    if (event.x>235 and event.x<285) and (event.y>185 and event.y<235):
+        print('x')
+    if (event.x>235 and event.x<285) and (event.y>245 and event.y<295):
+        print('-')
+    if (event.x>235 and event.x<285) and (event.y>305 and event.y<355):
+        print('+')
+    if (event.x>235 and event.x<285) and (event.y>365 and event.y<415):
+        print('=')
 
 if __name__ == '__main__':
-    orange = Color(0xfa9806,1)
+    
+    
+    orange = Color(0xfa9806,1)  #calculator colors
     lightGrey = Color(0xcecece,1)
     darkGrey = Color(0x6f6f6f,1)
     black = Color(0x000000,1)
 
-    blackBox = RectangleAsset(300,450,LineStyle(1,black),black)
+    blackBox = RectangleAsset(300,450,LineStyle(1,black),black)  #creates shapes and text on calculator
     functionButton = CircleAsset(25,LineStyle(1,orange),orange)
     equalsClear = CircleAsset(25,LineStyle(1,lightGrey),lightGrey)
     numberButton = CircleAsset(25,LineStyle(1,darkGrey),darkGrey)
@@ -54,9 +69,9 @@ if __name__ == '__main__':
     buttonText16 = TextAsset('0')
 
 
-    Sprite(blackBox)
+    Sprite(blackBox)  #calculator background
 
-    Sprite(numberButton,(45,210))
+    Sprite(numberButton,(45,210))  #sprites number buttons and text
     Sprite(buttonText7,(37,200))
     Sprite(numberButton,(45,270))
     Sprite(buttonText10,(37,258))
@@ -79,12 +94,12 @@ if __name__ == '__main__':
     Sprite(buttonText15,(188,318))
     Sprite(numberButton,(195,390))
 
-    Sprite(equalsClear,(45,150))
+    Sprite(equalsClear,(45,150))  #sprites light grey buttons (clear button + two extras)
     Sprite(buttonText1,(30,140))
     Sprite(equalsClear,(120,150))
     Sprite(equalsClear,(195,150))
 
-    Sprite(functionButton,(260,150))
+    Sprite(functionButton,(260,150))  #sprites function buttons and text
     Sprite(buttonText2,(255,140))
     Sprite(functionButton,(260,210))
     Sprite(buttonText3,(255,198))
