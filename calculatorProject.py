@@ -6,38 +6,43 @@ from ggame import *
 
 def mouseClick(event):  #which button did the user click
     if (event.x>20 and event.x<70) and (event.y>185 and event.y<235):
-        print(1)
+        return(1)
     if (event.x>95 and event.x<145) and (event.y>185 and event.y<235):
-        print(2)
+        return(2)
     if (event.x>170 and event.x<220) and (event.y>185 and event.y<235):
-        print(3)
+        return(3)
     if (event.x>20 and event.x<70) and (event.y>245 and event.y<295):
-        print(4)
+        return(4)
     if (event.x>95 and event.x<145) and (event.y>245 and event.y<295):
-        print(5)
+        return(5)
     if (event.x>170 and event.x<220) and (event.y>245 and event.y<295):
-        print(6)
+        return(6)
     if (event.x>20 and event.x<70) and (event.y>305 and event.y<355):
-        print(7)
+        return(7)
     if (event.x>95 and event.x<145) and (event.y>305 and event.y<355):
-        print(8)
+        return(8)
     if (event.x>170 and event.x<220) and (event.y>305 and event.y<355):
-        print(9)
+        return(9)
     if (event.x>20 and event.x<70) and (event.y>365 and event.y<415):
-        print(0)
+        return(0)
         
     if (event.x>20 and event.x<70) and (event.y>125 and event.y<175):
-        print('AC')
+        return('AC')
     if (event.x>235 and event.x<285) and (event.y>125 and event.y<175):
-        print('÷')
+        return('÷')
     if (event.x>235 and event.x<285) and (event.y>185 and event.y<235):
-        print('x')
+        return('x')
     if (event.x>235 and event.x<285) and (event.y>245 and event.y<295):
-        print('-')
+        return('-')
     if (event.x>235 and event.x<285) and (event.y>305 and event.y<355):
-        print('+')
+        return('+')
     if (event.x>235 and event.x<285) and (event.y>365 and event.y<415):
-        print('=')
+        return('=')
+
+def processNumber():
+    if mouseClick()==1:
+        print('yay')
+    
 
 if __name__ == '__main__':
     
