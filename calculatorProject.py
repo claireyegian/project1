@@ -42,23 +42,26 @@ def mouseClick(event):  #which button did the user click
 def processNumber(value):
     data['valueText1'] = data['valueText1']+str(value)
     data['num1'] = data['valueText1']
+    return(data['num1'])
 
 def operation(value):
     data['command'] = value
+    return(data['command'])
 
 def processNumber(value):
     data['valueText2'] = data['valueText2']+str(value)
     data['num2'] = data['valueText2']
+    return(data['num2'])
 
 def compute():
     if data['command'] == '÷':
-        print(data['num1'] / data['num2'])
+        print(int(data['num1']) / int(data['num2']))
     if data['command'] == 'x':
-        print(data['num1'] * data['num2'])
+        print(int(data['num1']) * int(data['num2']))
     if data['command'] == '-':
-        print(data['num1'] - data['num2'])
+        print(int(data['num1']) - int(data['num2']))
     if data['command'] == '+':
-        print(data['num1'] + data['num2'])
+        print(int(data['num1']) + int(data['num2']))
 
 if __name__ == '__main__':
     
