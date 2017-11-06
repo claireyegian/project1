@@ -27,7 +27,7 @@ def mouseClick(event):  #which button did the user click
         processNumber(0)
         
     if (event.x>20 and event.x<70) and (event.y>125 and event.y<175):
-        operation('AC')
+        clear()
     if (event.x>235 and event.x<285) and (event.y>125 and event.y<175):
         operation('÷')
     if (event.x>235 and event.x<285) and (event.y>185 and event.y<235):
@@ -39,29 +39,50 @@ def mouseClick(event):  #which button did the user click
     if (event.x>235 and event.x<285) and (event.y>365 and event.y<415):
         compute()
 
-def processNumber(value):
-    data['valueText1'] = data['valueText1']+str(value)
-    data['num1'] = data['valueText1']
-    return(data['num1'])
+def processNumber(value): #processes and stores numbers
+    if data['command']=='':
+        data['valueText1'] = data['valueText1']+str(value)
+        data['num1'] = data['valueText1']
+        data['screenText'] = TextAsset(data['num1'])
+        Sprite(data['screenText'],(10,155))
+        return(data['num1'])
+    if data['command']!='':
+        data['valueText2'] = data['valueText2']+str(value)
+        data['num2'] = data['valueText2']
+        data['screenText'] = TextAsset(data['num2'])
+        Sprite(data['screenText'],(10,155))
+        return(data['num2'])
 
 def operation(value):
     data['command'] = value
+    clearScreen()
+    data['screenText'] = TextAsset(data['command'])
+    Sprite(data['screenText'],(10,155))
     return(data['command'])
-
-def processNumber2(value):
-    data['valueText2'] = data['valueText2']+str(value)
-    data['num2'] = data['valueText2']
-    return(data['num2'])
 
 def compute():
     if data['command'] == '÷':
-        print(int(data['num1']) / int(data['num2']))
+        answer = int(data['num1']) / int(data['num2'])
     if data['command'] == 'x':
-        print(int(data['num1']) * int(data['num2']))
+        answer = int(data['num1']) * int(data['num2'])
     if data['command'] == '-':
-        print(int(data['num1']) - int(data['num2']))
+        answer = int(data['num1']) - int(data['num2'])
     if data['command'] == '+':
-        print(int(data['num1']) + int(data['num2']))
+        answer = int(data['num1']) + int(data['num2'])
+    data['screenText'] = TextAsset(answer)
+    Sprite(data['screenText'],(10,155))
+
+def clear():
+    data['valueText1'] = ''
+    data['valueText2'] = ''
+    data['num1'] = ''
+    data['command'] = ''
+    data['num2'] = ''
+    clearScreen()
+
+def clearScreen():
+    data['screenText'] = ''
+    Sprite(data['screenText'],(10,155))
 
 if __name__ == '__main__':
     
@@ -71,6 +92,7 @@ if __name__ == '__main__':
     data['num1'] = ''
     data['command'] = ''
     data['num2'] = ''
+    data['screenText'] = ''
     
     orange = Color(0xfa9806,1)  #calculator colors
     lightGrey = Color(0xcecece,1)
