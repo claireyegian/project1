@@ -39,7 +39,7 @@ def mouseClick(event):  #which button did the user click
     if (event.x>235 and event.x<285) and (event.y>365 and event.y<415):
         compute()
 
-def processNumber(value): #processes and stores numbers
+def processNumber(value):  #processes, prints and stores numbers
     if data['command']=='':
         data['valueText1'] = data['valueText1']+str(value)
         data['num1'] = data['valueText1']
@@ -53,14 +53,14 @@ def processNumber(value): #processes and stores numbers
         Sprite(data['screenText'],(10,155))
         return(data['num2'])
 
-def operation(value):
+def operation(value):  #prints, and stores operations
     data['command'] = value
     clearScreen()
     data['screenText'] = TextAsset(data['command'])
     Sprite(data['screenText'],(10,155))
     return(data['command'])
 
-def compute():
+def compute():  #processes operation, preforms and prints calculation
     if data['command'] == '÷':
         answer = int(data['num1']) / int(data['num2'])
     if data['command'] == 'x':
@@ -72,7 +72,7 @@ def compute():
     data['screenText'] = TextAsset(answer)
     Sprite(data['screenText'],(10,155))
 
-def clear():
+def clear():  #clears all variables and screen
     data['valueText1'] = ''
     data['valueText2'] = ''
     data['num1'] = ''
@@ -80,13 +80,13 @@ def clear():
     data['num2'] = ''
     clearScreen()
 
-def clearScreen():
+def clearScreen():  #clears screen
     data['screenText'] = ''
     Sprite(data['screenText'],(10,155))
 
 if __name__ == '__main__':
     
-    data = {}
+    data = {}   #dictionary
     data['valueText1'] = ''
     data['valueText2'] = ''
     data['num1'] = ''
