@@ -48,7 +48,7 @@ def operation(value):
     data['command'] = value
     return(data['command'])
 
-def processNumber(value):
+def processNumber2(value):
     data['valueText2'] = data['valueText2']+str(value)
     data['num2'] = data['valueText2']
     return(data['num2'])
