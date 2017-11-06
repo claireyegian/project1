@@ -51,16 +51,23 @@ def processNumber(value):
     data['num2'] = data['valueText2']
 
 def compute():
-    
+    if data['command'] == '÷':
+        print(data['num1'] / data['num2'])
+    if data['command'] == 'x':
+        print(data['num1'] * data['num2'])
+    if data['command'] == '-':
+        print(data['num1'] - data['num2'])
+    if data['command'] == '+':
+        print(data['num1'] + data['num2'])
 
 if __name__ == '__main__':
     
     data = {}
     data['valueText1'] = ''
     data['valueText2'] = ''
-    data['num1']
-    data['command']
-    data['num2']
+    data['num1'] = ''
+    data['command'] = ''
+    data['num2'] = ''
     
     orange = Color(0xfa9806,1)  #calculator colors
     lightGrey = Color(0xcecece,1)
