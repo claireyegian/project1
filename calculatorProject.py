@@ -43,21 +43,21 @@ def processNumber(value):  #processes, prints and stores numbers
     if data['command']=='':
         data['valueText1'] = data['valueText1']+str(value)
         data['num1'] = data['valueText1']
-        data['screenText'] = TextAsset(data['num1'])
-        Sprite(data['screenText'],(10,155))
+        data['screenText'] = TextAsset(data['num1'],fill=white)
+        Sprite(data['screenText'],(30,90))
         return(data['num1'])
     if data['command']!='':
         data['valueText2'] = data['valueText2']+str(value)
         data['num2'] = data['valueText2']
-        data['screenText'] = TextAsset(data['num2'])
-        Sprite(data['screenText'],(10,155))
+        data['screenText'] = TextAsset(data['num2'],fill=white)
+        Sprite(data['screenText'],(30,90))
         return(data['num2'])
 
 def operation(value):  #prints, and stores operations
     data['command'] = value
     clearScreen()
-    data['screenText'] = TextAsset(data['command'])
-    Sprite(data['screenText'],(10,155))
+    data['screenText'] = TextAsset(data['command'],fill=white)
+    Sprite(data['screenText'],(30,90))
     return(data['command'])
 
 def compute():  #processes operation, preforms and prints calculation
@@ -69,8 +69,8 @@ def compute():  #processes operation, preforms and prints calculation
         answer = int(data['num1']) - int(data['num2'])
     if data['command'] == '+':
         answer = int(data['num1']) + int(data['num2'])
-    data['screenText'] = TextAsset(answer)
-    Sprite(data['screenText'],(10,155))
+    data['screenText'] = TextAsset(answer,fill=white)
+    Sprite(data['screenText'],(30,90))
 
 def clear():  #clears all variables and screen
     data['valueText1'] = ''
@@ -82,7 +82,7 @@ def clear():  #clears all variables and screen
 
 def clearScreen():  #clears screen
     data['screenText'] = ''
-    Sprite(data['screenText'],(10,155))
+    Sprite(data['screenText'],(30,90))
 
 if __name__ == '__main__':
     
@@ -98,6 +98,7 @@ if __name__ == '__main__':
     lightGrey = Color(0xcecece,1)
     darkGrey = Color(0x6f6f6f,1)
     black = Color(0x000000,1)
+    white = Color(0xffffff,1)
 
     blackBox = RectangleAsset(300,450,LineStyle(1,black),black)  #creates shapes and text on calculator
     functionButton = CircleAsset(25,LineStyle(1,orange),orange)
