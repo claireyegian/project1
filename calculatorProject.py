@@ -43,21 +43,20 @@ def processNumber(value):  #processes, prints and stores numbers
     if data['command']=='':
         data['valueText1'] = data['valueText1']+str(value)
         data['num1'] = data['valueText1']
-        data['screenText'] = TextAsset(data['num1'],fill=white)
-        Sprite(data['screenText'],(30,90))
+        data['spriteText'].destroy()
+        data['spriteText'] = Sprite(TextAsset(data['num1'],fill=white,(30,90))
         return(data['num1'])
     if data['command']!='':
         data['valueText2'] = data['valueText2']+str(value)
         data['num2'] = data['valueText2']
-        data['screenText'] = TextAsset(data['num2'],fill=white)
-        Sprite(data['screenText'],(30,90))
+        data['spriteText'].destroy()
+        data['spriteText'] = Sprite(TextAsset(data['num2'],fill=white,(30,90))
         return(data['num2'])
 
 def operation(value):  #prints, and stores operations
     data['command'] = value
-    clearScreen()
-    data['screenText'] = TextAsset(data['command'],fill=white)
-    Sprite(data['screenText'],(30,90))
+    data['spriteText'].destroy()
+    data['spriteText'] = Sprite(TextAsset(data['command'],fill=white,(30,90))
     return(data['command'])
 
 def compute():  #processes operation, preforms and prints calculation
@@ -69,8 +68,8 @@ def compute():  #processes operation, preforms and prints calculation
         answer = int(data['num1']) - int(data['num2'])
     if data['command'] == '+':
         answer = int(data['num1']) + int(data['num2'])
-    data['screenText'] = TextAsset(answer,fill=white)
-    Sprite(data['screenText'],(30,90))
+    data['spriteText'].destroy()
+    data['spriteText'] = Sprite(TextAsset(answer,fill=white,(30,90))
 
 def clear():  #clears all variables and screen
     data['valueText1'] = ''
@@ -78,11 +77,7 @@ def clear():  #clears all variables and screen
     data['num1'] = ''
     data['command'] = ''
     data['num2'] = ''
-    clearScreen()
-
-def clearScreen():  #clears screen
-    data['screenText'] = ''
-    Sprite(data['screenText'],(30,90))
+    data['spriteText'].destroy
 
 if __name__ == '__main__':
     
@@ -92,7 +87,7 @@ if __name__ == '__main__':
     data['num1'] = ''
     data['command'] = ''
     data['num2'] = ''
-    data['screenText'] = ''
+    data['spriteText'] = Sprite(TextAsset(''),(30,90))
     
     orange = Color(0xfa9806,1)  #calculator colors
     lightGrey = Color(0xcecece,1)
