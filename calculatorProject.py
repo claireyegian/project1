@@ -44,19 +44,19 @@ def processNumber(value):  #processes, prints and stores numbers
         data['valueText1'] = data['valueText1']+str(value)
         data['num1'] = data['valueText1']
         data['spriteText'].destroy()
-        data['spriteText'] = Sprite(TextAsset(data['num1'],fill=white,(30,90))
+        data['spriteText'] = Sprite(TextAsset(data['num1'], fill=white),(30,90))
         return(data['num1'])
     if data['command']!='':
         data['valueText2'] = data['valueText2']+str(value)
         data['num2'] = data['valueText2']
         data['spriteText'].destroy()
-        data['spriteText'] = Sprite(TextAsset(data['num2'],fill=white,(30,90))
+        data['spriteText'] = Sprite(TextAsset(data['num2'], fill=white),(30,90))
         return(data['num2'])
 
 def operation(value):  #prints, and stores operations
     data['command'] = value
     data['spriteText'].destroy()
-    data['spriteText'] = Sprite(TextAsset(data['command'],fill=white,(30,90))
+    data['spriteText'] = Sprite(TextAsset(data['command'], fill=white),(30,90))
     return(data['command'])
 
 def compute():  #processes operation, preforms and prints calculation
@@ -69,7 +69,7 @@ def compute():  #processes operation, preforms and prints calculation
     if data['command'] == '+':
         answer = int(data['num1']) + int(data['num2'])
     data['spriteText'].destroy()
-    data['spriteText'] = Sprite(TextAsset(answer,fill=white,(30,90))
+    data['spriteText'] = Sprite(TextAsset(answer, fill=white),(30,90))
 
 def clear():  #clears all variables and screen
     data['valueText1'] = ''
@@ -78,8 +78,15 @@ def clear():  #clears all variables and screen
     data['command'] = ''
     data['num2'] = ''
     data['spriteText'].destroy
+    data['spriteText'] = Sprite(TextAsset(''),(30,90))
 
 if __name__ == '__main__':
+    
+    orange = Color(0xfa9806,1)  #calculator colors
+    lightGrey = Color(0xcecece,1)
+    darkGrey = Color(0x6f6f6f,1)
+    black = Color(0x000000,1)
+    white = Color(0xffffff,1)
     
     data = {}   #dictionary
     data['valueText1'] = ''
@@ -88,12 +95,6 @@ if __name__ == '__main__':
     data['command'] = ''
     data['num2'] = ''
     data['spriteText'] = Sprite(TextAsset(''),(30,90))
-    
-    orange = Color(0xfa9806,1)  #calculator colors
-    lightGrey = Color(0xcecece,1)
-    darkGrey = Color(0x6f6f6f,1)
-    black = Color(0x000000,1)
-    white = Color(0xffffff,1)
 
     blackBox = RectangleAsset(300,450,LineStyle(1,black),black)  #creates shapes and text on calculator
     functionButton = CircleAsset(25,LineStyle(1,orange),orange)
