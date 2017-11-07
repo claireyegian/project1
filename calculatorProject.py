@@ -77,7 +77,7 @@ def clear():  #clears all variables and screen
     data['num1'] = ''
     data['command'] = ''
     data['num2'] = ''
-    data['spriteText'].destroy
+    data['spriteText'].destroy()
     data['spriteText'] = Sprite(TextAsset(''),(30,90))
 
 if __name__ == '__main__':
