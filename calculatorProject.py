@@ -55,8 +55,6 @@ def processNumber(value):  #processes, prints and stores numbers
 
 def operation(value):  #prints, and stores operations
     data['command'] = value
-    data['spriteText'].destroy()
-    data['spriteText'] = Sprite(TextAsset(data['command'], fill=white),(30,90))
     return(data['command'])
 
 def compute():  #processes operation, preforms and prints calculation
@@ -68,15 +66,16 @@ def compute():  #processes operation, preforms and prints calculation
         answer = int(data['num1']) - int(data['num2'])
     if data['command'] == '+':
         answer = int(data['num1']) + int(data['num2'])
+    data['valueText1'] = ''  #clears all variables and stores answer
+    data['valueText2'] = ''
+    data['num1'] = answer
+    data['command'] = ''
+    data['num2'] = ''
     data['spriteText'].destroy()
     data['spriteText'] = Sprite(TextAsset(answer, fill=white),(30,90))
 
-def clear():  #clears all variables and screen
-    data['valueText1'] = ''
-    data['valueText2'] = ''
+def clear():  #clears 'num1' and screen
     data['num1'] = ''
-    data['command'] = ''
-    data['num2'] = ''
     data['spriteText'].destroy()
     data['spriteText'] = Sprite(TextAsset(''),(30,90))
 
